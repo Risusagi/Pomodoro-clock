@@ -1,0 +1,194 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+:root {
+    font-family: 'Acme', sans-serif;
+}
+.content {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('images/tomato.jpg');
+}
+#pomodoro_clock {
+    border-radius: 7%;
+    position: relative;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: black;
+    
+    margin: 2vh 0;
+    padding-top: 2%;
+    background-color: white;
+}
+h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: #ce1538;
+    text-shadow: 1px 1px 0 black;
+}
+h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+button {
+    font-weight: bold;
+    font-size: 2.4rem;
+    background-color: white;
+    font-family: 'Acme', sans-serif;
+}
+
+.container {
+    margin-top: 5%;
+    display: grid;
+    grid-template: repeat(4, auto) / repeat(2, 1fr);
+    grid-template-areas: "session break" "timer timer" "buttons buttons" "statistics statistics";
+    justify-items: center;
+    position: relative;
+}
+
+/*containers of session and break settings; 2 buttons + integer*/
+.time_settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*time of session or break, between buttons*/
+.time_value {
+    width: 40%;
+    padding: 0 5%;
+    text-align: center;
+    font-size: 1.5em;
+}
+#session_settings {
+    width: 100%;
+    grid-area: session;
+}
+#break_settings {
+    width: 100%;
+    grid-area: break;
+}
+.counting_buttons {
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    height: 100%;
+}
+#timer_div {
+    grid-area: timer;
+    position: relative;
+    
+    margin: 2% 0;
+    display: grid;
+    grid-template-rows: 2fr 3fr;
+    border: solid 3px rgb(216, 10, 10);
+    border-radius: 50%;
+}
+#text_inside_timer {
+    font-size: 1.5rem;
+    align-self: center;
+    text-align: center;
+    color: #084f0c;
+    padding-top: 15px;
+}
+#timer {
+    font-size: 2.6rem; 
+    text-align: center;
+}
+#container_buttons {
+    grid-area: buttons;
+    display: flex;
+    justify-content: center;
+}
+#container_buttons button{
+    height: 5vh;
+    margin: 5% 10%;
+}
+#container_buttons img {
+    height: 100%;
+}
+.piloting_buttons {
+   padding: 0 16px;
+}
+button:focus {
+    outline: 0
+}
+#users_statistics {
+    grid-area: statistics;
+    margin-top: 4%;
+    justify-self: start;
+}
+#users_statistics p {
+    padding-left: 25px;
+    font-size: 1.1rem;
+    line-height: 2.5em;
+}
+.statistics-values {
+    position: absolute;
+    width: 30%;
+    right: 6%;
+    text-align: center;
+}
+#users_sessions {
+    bottom: 5em;
+}
+#users_sessions_time {
+    bottom: 2.5em;
+}
+#users_breaks_time {
+    bottom: 0;
+}
+#users_statistics p:nth-of-type(1) {
+    color: #942617;
+}
+#users_statistics p:nth-of-type(2) {
+    color: #c57d00;
+}
+#users_statistics p:nth-of-type(3) {
+    color: #17941a;
+}
+@media (orientation:portrait) {
+    :root {
+        font-size: 39px;
+    }
+    #pomodoro_clock {
+        height: 90vh;
+        width: 94vw;
+    }
+     #timer_div {
+         width: 42vw;
+         height: 42vw;
+     }
+     #users_statistics p {
+        line-height: 2em;
+    }
+    #users_sessions {
+        bottom: 4em;
+    }
+    #users_sessions_time {
+        bottom: 2em;
+    }
+    #users_breaks_time {
+        bottom: 0;
+    }
+}
+@media (orientation:landscape) {
+    :root {
+        font-size: 18px;
+    }
+    #pomodoro_clock {
+        max-height: 680px;
+        width: 470px;
+    }
+    #timer_div {
+        width: 200px;
+        height: 200px;
+    }
+}
