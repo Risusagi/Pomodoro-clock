@@ -11,7 +11,8 @@
 
 ## General info
 Pomodoro clock was created to learn some new JS features, later, as I learn new things about JavaScript, I rewrite it practically from zero.
-App is very useful when I study. 
+
+App is very useful when I study. It also counts the time of sessions and breaks, that helps to control user's time even better.
 
 ## Screenshots
 <img src="img/screenshots/screenshot.png" height="300">
