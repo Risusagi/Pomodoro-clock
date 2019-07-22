@@ -20,7 +20,8 @@ App is very useful when I study.
 * Javascript
 * CSS
 * HTML
-* 
+
 ## Status
 _finished_
+
 Everything that was planed for this project is already done.
