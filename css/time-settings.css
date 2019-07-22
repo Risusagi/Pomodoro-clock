@@ -1,0 +1,58 @@
+/* div with session and break set */
+.time-sets {
+    text-align: center;
+    font-size: 1.4rem;
+}
+/* session/break div */
+.time-sets>div {
+    margin-bottom: 11px;
+}
+.set-title {
+    display: block;
+    margin-bottom: 6px;
+}
+.time-sets>div button {
+    padding: 8px;
+    font-size: 1.9rem;
+}
+
+/* div with session and break settings: clearing */
+.time-sets::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+.time-value {
+    display: inline-block;
+    width: 36px; 
+}
+
+/* MEDIA */
+@media (min-width: 222px) {
+    .session-set {
+        float: left;
+    }
+    .break-set {
+        float: right;
+    }
+}
+@media (min-width: 316px) {
+    .time-sets>div {
+        font-size: 2rem;
+    }
+}
+@media (min-width: 480px) {
+    .time-sets>div {
+        margin-bottom: 5px;
+    }
+    .set-title {
+        font-size: 2.4rem;
+    }
+    .time-sets>div button {
+        font-size: 2.4rem;
+    }
+    .time-value {
+        display: inline-block;
+        width: 70px;
+    }
+}

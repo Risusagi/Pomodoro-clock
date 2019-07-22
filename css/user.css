@@ -1,0 +1,45 @@
+.user-statistics p {
+    line-height: 1.8em;
+    text-align: center;
+}
+.user-statistics span {
+    display: block;
+}
+.user-statistics p:nth-of-type(1) {
+    color: #942617;
+}
+.user-statistics p:nth-of-type(2) {
+    color: #c57d00;
+}
+.user-statistics p:nth-of-type(3) {
+    color: #17941a;
+}
+
+/* MEDIA */
+@media (min-width: 470px) {
+    .user-statistics p {
+        line-height: 2.4em;
+        padding-right: 25px;
+    }
+    .user-statistics span {
+        float: right;
+    }
+}
+@media (min-width: 316px) {
+    .user-statistics p {
+        line-height: 1.8em;
+        text-align: left;
+        padding-right: 10px;
+    }
+    .user-statistics span {
+        float: right;
+    }
+}
+@media (min-width: 470px) {
+    .user-statistics p {
+        line-height: 2.4em;
+    }
+    .user-statistics span {
+        text-align: center;
+    }
+}
