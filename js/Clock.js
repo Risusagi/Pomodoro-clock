@@ -113,13 +113,13 @@ class Clock {
             </div>
             <div class="btns">
                 <button id="start-btn">
-                    <img src="../img/start.png">
+                    <img src="img/start.png">
                 </button>
                 <button id="pause-btn">
-                    <img src="../img/pause.png">
+                    <img src="img/pause.png">
                 </button>
                 <button id="reset-btn">
-                    <img src="../img/reset.png">
+                    <img src="img/reset.png">
                 </button>
             </div>
         `;
