@@ -7,7 +7,7 @@ class TimeSettings {
         this.changeTime = (e) => this.handleTimeChange(e);
     }
     setProperties() {
-        this.valDiv = document.querySelectorAll(`.change-${this.type}`);
+        this.changeBtns = document.querySelectorAll(`.change-${this.type}`);
     }
     // change time on button click
     handleTimeChange(e) {
@@ -22,28 +22,28 @@ class TimeSettings {
         }
     }
     appendTimeChange() {
-        this.valDiv.forEach(el => el.addEventListener('click', this.changeTime))
+        this.changeBtns.forEach(el => el.addEventListener('click', this.changeTime))
     }
     // disable time changing during countingdown
     disableTimeChange() {
-        this.valDiv.forEach(el => el.removeEventListener('click', this.changeTime));
+        this.changeBtns.forEach(el => el.removeEventListener('click', this.changeTime));
     }
     render() {
         const timeSet = document.createElement('div');
         timeSet.setAttribute('class', `${this.type}-set`)
         timeSet.innerHTML = `
-          <span class="set-title">
-            ${this.type.slice(0,1).toUpperCase() + this.type.slice(1, this.type.length)}
-          </span>
-                <button class="decrease change-${this.type}">
-                    -
-                </button>
-                <span class="${this.type}-time time-value">
-                    ${this.time}
-                </span>
-                <button class="increase change-${this.type}">
-                    +
-                </button>  
+            <span class="set-title">
+                ${this.type.slice(0,1).toUpperCase() + this.type.slice(1)}
+            </span>
+            <button class="decrease change-${this.type}">
+                -
+            </button>
+            <span class="${this.type}-time time-value">
+                ${this.time}
+            </span>
+            <button class="increase change-${this.type}">
+                +
+            </button>  
         `;
         document.querySelector('.time-sets').appendChild(timeSet);
         this.setProperties();

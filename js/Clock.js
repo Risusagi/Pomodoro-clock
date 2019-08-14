@@ -3,6 +3,7 @@ class Clock {
         this.title = 'session';
         this.wasPaused = false;
         this.startClock = () => this.handleStart();
+        this.fullTime = app.user.time * 60;
     }
     //capitalise first letter
     makeReadable(word) {
@@ -57,8 +58,8 @@ class Clock {
             if(this.fullTime === 0) {
                 this.changePeriod();
             }
-            this.wasPaused ? this.wasPaused = false : '';
         }, 1000)
+        this.wasPaused = false;
     }
     // when period is finished, change its type, add to statistics, play signal, prepare timer
     changePeriod() {
@@ -87,7 +88,11 @@ class Clock {
     handlePause() {
         clearInterval(this.tik);
         app.user.stopSound();
-        this.wasPaused = true;
+        // set property only if pause was clicked during countingdown
+        if(this.fullTime !== app.user.time * 60) {
+            this.wasPaused = true;
+        }
+        
         this.appendStartHandler();
     }
     // for reset button
@@ -101,7 +106,7 @@ class Clock {
     }
     render() {
         const clockDiv = document.createElement('div')
-        clockDiv.setAttribute('class', 'clock');
+        clockDiv.className =  'clock';
         clockDiv.innerHTML =  `
             <div class="clock-display">
                 <h2 class="timer-title">
